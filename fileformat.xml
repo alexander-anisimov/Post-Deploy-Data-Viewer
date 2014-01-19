@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfTable xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Table ID="20">
+    <Name>First Name</Name>
+    <Value>135</Value>
+  </Table>
+  <Table ID="18">
+    <Name>Second Name</Name>
+    <Value>456</Value>
+  </Table>
+</ArrayOfTable>
