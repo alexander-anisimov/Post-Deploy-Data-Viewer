@@ -1,8 +1,0 @@
-c:\users\asd24\documents\visual studio 2012\Projects\Post-DeployDataViewer\Post-DeployDataViewer\bin\Debug\Post-DeployDataViewer.exe
-c:\users\asd24\documents\visual studio 2012\Projects\Post-DeployDataViewer\Post-DeployDataViewer\bin\Debug\Post-DeployDataViewer.pdb
-c:\users\asd24\documents\visual studio 2012\Projects\Post-DeployDataViewer\Post-DeployDataViewer\obj\Debug\Post-DeployDataViewer.csprojResolveAssemblyReference.cache
-c:\users\asd24\documents\visual studio 2012\Projects\Post-DeployDataViewer\Post-DeployDataViewer\obj\Debug\Post_DeployDataViewer.Properties.Resources.resources
-c:\users\asd24\documents\visual studio 2012\Projects\Post-DeployDataViewer\Post-DeployDataViewer\obj\Debug\Post-DeployDataViewer.csproj.GenerateResource.Cache
-c:\users\asd24\documents\visual studio 2012\Projects\Post-DeployDataViewer\Post-DeployDataViewer\obj\Debug\Post-DeployDataViewer.exe
-c:\users\asd24\documents\visual studio 2012\Projects\Post-DeployDataViewer\Post-DeployDataViewer\obj\Debug\Post-DeployDataViewer.pdb
-c:\users\asd24\documents\visual studio 2012\Projects\Post-DeployDataViewer\Post-DeployDataViewer\obj\Debug\Post_DeployDataViewer.Form1.resources

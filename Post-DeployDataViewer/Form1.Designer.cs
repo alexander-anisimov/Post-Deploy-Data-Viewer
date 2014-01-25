@@ -29,10 +29,11 @@
 		private void InitializeComponent()
 		{
 			this.OpenFile = new System.Windows.Forms.Button();
-			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.txtBoxXMLPath = new System.Windows.Forms.TextBox();
 			this.btnUploadFile = new System.Windows.Forms.Button();
 			this.PathToLocalFolder = new System.Windows.Forms.FolderBrowserDialog();
 			this.PathToLocalFile = new System.Windows.Forms.OpenFileDialog();
+			this.txtBoxDataFilePath = new System.Windows.Forms.TextBox();
 			this.SuspendLayout();
 			// 
 			// OpenFile
@@ -45,12 +46,12 @@
 			this.OpenFile.UseVisualStyleBackColor = true;
 			this.OpenFile.Click += new System.EventHandler(this.btnOpenFile);
 			// 
-			// textBox1
+			// txtBoxXMLPath
 			// 
-			this.textBox1.Location = new System.Drawing.Point(25, 188);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(154, 20);
-			this.textBox1.TabIndex = 1;
+			this.txtBoxXMLPath.Location = new System.Drawing.Point(25, 188);
+			this.txtBoxXMLPath.Name = "txtBoxXMLPath";
+			this.txtBoxXMLPath.Size = new System.Drawing.Size(154, 20);
+			this.txtBoxXMLPath.TabIndex = 1;
 			// 
 			// btnUploadFile
 			// 
@@ -71,13 +72,21 @@
 			// 
 			this.PathToLocalFile.FileName = "PathToLocalFile";
 			// 
+			// textBox1
+			// 
+			this.txtBoxDataFilePath.Location = new System.Drawing.Point(25, 188);
+			this.txtBoxDataFilePath.Name = "textBox1";
+			this.txtBoxDataFilePath.Size = new System.Drawing.Size(154, 20);
+			this.txtBoxDataFilePath.TabIndex = 3;
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(284, 262);
+			this.Controls.Add(this.txtBoxDataFilePath);
 			this.Controls.Add(this.btnUploadFile);
-			this.Controls.Add(this.textBox1);
+			this.Controls.Add(this.txtBoxXMLPath);
 			this.Controls.Add(this.OpenFile);
 			this.Name = "Form1";
 			this.Text = "Post-Deploy Data Viewer";
@@ -89,10 +98,11 @@
 		#endregion
 
 		private System.Windows.Forms.Button OpenFile;
-		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.TextBox txtBoxXMLPath;
 		private System.Windows.Forms.Button btnUploadFile;
 		private System.Windows.Forms.FolderBrowserDialog PathToLocalFolder;
 		private System.Windows.Forms.OpenFileDialog PathToLocalFile;
+		private System.Windows.Forms.TextBox txtBoxDataFilePath;
 	}
 }
 

@@ -18,6 +18,7 @@ namespace Post_DeployDataViewer
 		public Form1()
 		{
 			InitializeComponent();
+			txtBoxDataFilePath.Hide();
 		}
 
 		private void btnOpenFile(object sender, EventArgs e)
@@ -26,19 +27,21 @@ namespace Post_DeployDataViewer
 			DialogResult result = PathToLocalFile.ShowDialog();
 			if (result == DialogResult.OK)
 			{
-				textBox1.Text = PathToLocalFile.FileName;
+				txtBoxXMLPath.Text = PathToLocalFile.FileName;
+				txtBoxDataFilePath.Text = PathToLocalFile.FileName;
 			}
 		}
 
 		private void btnUploadFile_Click(object sender, EventArgs e)
 		{
 			// Dowload File to Temp directory
-			string url = textBox1.Text;
+			string urlXML = txtBoxXMLPath.Text;
+			string urlDataFile = txtBoxDataFilePath.Text;
 
 			WebClient webClient = new WebClient();
 			string path;
 			path = "c:\\temp\\";
-			webClient.DownloadFile(url, path + "\\" + Path.GetFileName(url));
+			webClient.DownloadFile(urlXML ?? urlDataFile, path + "\\" + Path.GetFileName(urlXML ?? urlDataFile));
 
 			//Table t1 = new Table();
 			//t1.ID = 20;
@@ -53,8 +56,13 @@ namespace Post_DeployDataViewer
 			//List<Table> tt1 = new List<Table>() { t1, t2 };
 			//SerializeToXML(tt1);
 
-			List<Table> tt2 = DeserializeFromXML(Path.GetFileName(url));
-			Console.ReadLine();
+			List<Table> tt2 = DeserializeFromXML(Path.GetFileName(urlXML));
+
+			txtBoxXMLPath.Hide();
+			txtBoxXMLPath.Clear();
+			txtBoxDataFilePath.Show();
+			MessageBox.Show("XML Mapping file loaded. Now upload data file");
+			//MessageBox.Show("Текст сообщения", "Заголовок сообщения", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 		}
 
 		public class Table
