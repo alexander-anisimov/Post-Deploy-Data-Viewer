@@ -13,36 +13,34 @@ namespace Post_DeployDataViewer
 {
 	public partial class frmMain : Form
 	{
-		// param Flag for xml file
-		bool IsXMLFile = true;
 
 		public frmMain()
 		{
 			InitializeComponent();
-			txtBoxDataFilePath.Hide();
 		}
 
-		private void btnOpenFile(object sender, EventArgs e)
+		// Open button: choose a file and get file Path
+		public void btnOpenFile(object sender, EventArgs e)
 		{
 			// Get Path to File
 			DialogResult result = PathToLocalFile.ShowDialog();
 			if (result == DialogResult.OK)
 			{
 				txtBoxXMLPath.Text = PathToLocalFile.FileName;
-				txtBoxDataFilePath.Text = PathToLocalFile.FileName;
 			}
 		}
 
+		// Upload button: parsing XML file through serialization
 		private void btnUploadFile_Click(object sender, EventArgs e)
 		{
 			// Dowload File to Temp directory
 			string urlXML = txtBoxXMLPath.Text;
-			string urlDataFile = txtBoxDataFilePath.Text;
+			//string urlDataFile = txtBoxDataFilePath.Text;
 
 			WebClient webClient = new WebClient();
 			string path;
 			path = "c:\\temp\\";
-			webClient.DownloadFile(urlXML ?? urlDataFile, path + "\\" + Path.GetFileName(urlXML ?? urlDataFile));
+			webClient.DownloadFile(urlXML, path + "\\" + Path.GetFileName(urlXML));
 
 			//Table t1 = new Table();
 			//t1.ID = 20;
@@ -57,19 +55,11 @@ namespace Post_DeployDataViewer
 			//List<Table> tt1 = new List<Table>() { t1, t2 };
 			//SerializeToXML(tt1);
 
-			if (IsXMLFile)
-			{
-				List<Serialization.Table> tt2 = Serialization.DeserializeFromXML(Path.GetFileName(urlXML));
-				MessageBox.Show("XML Mapping file loaded. Now upload data file");
-			}
-
-			txtBoxXMLPath.Hide();
-			txtBoxDataFilePath.Clear();
-			txtBoxDataFilePath.Show();
-
-			IsXMLFile = false;
+			List<Serialization.Table> tt2 = Serialization.DeserializeFromXML(Path.GetFileName(urlXML));
+			MessageBox.Show("XML Mapping file loaded. Now upload data file");
 		}
 
+		// Next button
 		private void btnViewData_Click(object sender, EventArgs e)
 		{
 			frmDataView frmDataView = new frmDataView();

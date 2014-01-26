@@ -18,6 +18,7 @@ namespace Post_DeployDataViewer
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			Application.Run(new frmMain());
+			//Application.Run(new frmDataView());
 		}
 	}
 }

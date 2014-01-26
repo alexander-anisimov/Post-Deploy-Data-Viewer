@@ -1,0 +1,4 @@
+1	John Smith	100
+2	Thomas Barnes	200
+3	William Sheakspeare	300
+4	Barack Obama	400

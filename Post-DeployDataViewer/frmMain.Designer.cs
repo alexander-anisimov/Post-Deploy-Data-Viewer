@@ -33,8 +33,8 @@
 			this.btnUploadFile = new System.Windows.Forms.Button();
 			this.PathToLocalFolder = new System.Windows.Forms.FolderBrowserDialog();
 			this.PathToLocalFile = new System.Windows.Forms.OpenFileDialog();
-			this.txtBoxDataFilePath = new System.Windows.Forms.TextBox();
 			this.btnViewData = new System.Windows.Forms.Button();
+			this.lblChooseXMLFile = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// OpenFile
@@ -49,9 +49,9 @@
 			// 
 			// txtBoxXMLPath
 			// 
-			this.txtBoxXMLPath.Location = new System.Drawing.Point(25, 165);
+			this.txtBoxXMLPath.Location = new System.Drawing.Point(12, 165);
 			this.txtBoxXMLPath.Name = "txtBoxXMLPath";
-			this.txtBoxXMLPath.Size = new System.Drawing.Size(154, 20);
+			this.txtBoxXMLPath.Size = new System.Drawing.Size(167, 20);
 			this.txtBoxXMLPath.TabIndex = 1;
 			// 
 			// btnUploadFile
@@ -73,30 +73,33 @@
 			// 
 			this.PathToLocalFile.FileName = "PathToLocalFile";
 			// 
-			// txtBoxDataFilePath
-			// 
-			this.txtBoxDataFilePath.Location = new System.Drawing.Point(12, 165);
-			this.txtBoxDataFilePath.Name = "txtBoxDataFilePath";
-			this.txtBoxDataFilePath.Size = new System.Drawing.Size(167, 20);
-			this.txtBoxDataFilePath.TabIndex = 3;
-			// 
 			// btnViewData
 			// 
 			this.btnViewData.Location = new System.Drawing.Point(196, 204);
 			this.btnViewData.Name = "btnViewData";
 			this.btnViewData.Size = new System.Drawing.Size(156, 23);
 			this.btnViewData.TabIndex = 4;
-			this.btnViewData.Text = "View Data";
+			this.btnViewData.Text = "Next";
 			this.btnViewData.UseVisualStyleBackColor = true;
 			this.btnViewData.Click += new System.EventHandler(this.btnViewData_Click);
+			// 
+			// lblChooseXMLFile
+			// 
+			this.lblChooseXMLFile.AutoSize = true;
+			this.lblChooseXMLFile.Font = new System.Drawing.Font("Arial Unicode MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.lblChooseXMLFile.Location = new System.Drawing.Point(9, 27);
+			this.lblChooseXMLFile.Name = "lblChooseXMLFile";
+			this.lblChooseXMLFile.Size = new System.Drawing.Size(214, 16);
+			this.lblChooseXMLFile.TabIndex = 5;
+			this.lblChooseXMLFile.Text = "Choose a XML mapping file to upload";
 			// 
 			// frmMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(364, 262);
+			this.Controls.Add(this.lblChooseXMLFile);
 			this.Controls.Add(this.btnViewData);
-			this.Controls.Add(this.txtBoxDataFilePath);
 			this.Controls.Add(this.btnUploadFile);
 			this.Controls.Add(this.txtBoxXMLPath);
 			this.Controls.Add(this.OpenFile);
@@ -113,9 +116,9 @@
 		private System.Windows.Forms.TextBox txtBoxXMLPath;
 		private System.Windows.Forms.Button btnUploadFile;
 		private System.Windows.Forms.FolderBrowserDialog PathToLocalFolder;
-		private System.Windows.Forms.OpenFileDialog PathToLocalFile;
-		private System.Windows.Forms.TextBox txtBoxDataFilePath;
 		private System.Windows.Forms.Button btnViewData;
+		public System.Windows.Forms.OpenFileDialog PathToLocalFile;
+		private System.Windows.Forms.Label lblChooseXMLFile;
 	}
 }
 
