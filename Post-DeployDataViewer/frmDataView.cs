@@ -31,12 +31,21 @@ namespace Post_DeployDataViewer
 			Stream dfStream = PathToLocalFile.OpenFile();
 			StreamReader dfStreamReader = new StreamReader(dfStream);
 
+			//List<Serialization.Table> tt1 = Serialization.DeserializeFromXML(Path.GetFileName("fileformat.xml"));
+			string[] tt2 = Serialization.DeserializeFromXMLArray(Path.GetFileName("fileformat.xml"));
+			
 			DataSet ds = new DataSet();
 			ds.Tables.Add("DataFile");
 
-			ds.Tables[0].Columns.Add("ID");
-			ds.Tables[0].Columns.Add("Name");
-			ds.Tables[0].Columns.Add("Value");
+			foreach (string tag in tt2) // Loop through List with foreach
+			{
+				ds.Tables[0].Columns.Add(tag);
+			}
+
+
+			//ds.Tables[0].Columns.Add("ID");
+			//ds.Tables[0].Columns.Add("Name");
+			//ds.Tables[0].Columns.Add("Value");
 
 			string[] dfStringRowArray = dfStreamReader.ReadToEnd().Split('\n');
 			int rowCount = dfStringRowArray.Count();
