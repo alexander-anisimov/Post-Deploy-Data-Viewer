@@ -22,8 +22,7 @@ namespace Post_DeployDataViewer
 		// Open button: choose a file and get file Path
 		public void btnOpenFile(object sender, EventArgs e)
 		{
-			// Get Path to File
-			DialogResult result = PathToLocalFile.ShowDialog();
+			DialogResult result = PathToLocalFile.ShowDialog(); // Get Path to File
 			if (result == DialogResult.OK)
 			{
 				txtBoxXMLPath.Text = PathToLocalFile.FileName;
@@ -33,9 +32,7 @@ namespace Post_DeployDataViewer
 		// Upload button: parsing XML file through serialization
 		private void btnUploadFile_Click(object sender, EventArgs e)
 		{
-			// Dowload File to Temp directory
-			string urlXML = txtBoxXMLPath.Text;
-			//string urlDataFile = txtBoxDataFilePath.Text;
+			string urlXML = txtBoxXMLPath.Text; // Dowload File to Temp directory
 
 			WebClient webClient = new WebClient();
 			string path;
@@ -55,7 +52,7 @@ namespace Post_DeployDataViewer
 			//List<Table> tt1 = new List<Table>() { t1, t2 };
 			//SerializeToXML(tt1);
 
-			List<Serialization.Table> tt2 = Serialization.DeserializeFromXML(Path.GetFileName(urlXML));
+			//List<Serialization.Table> tt2 = Serialization.DeserializeFromXML(Path.GetFileName(urlXML));
 			MessageBox.Show("XML Mapping file loaded. Now upload data file");
 		}
 

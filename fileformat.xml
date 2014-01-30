@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfTable xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Table>
-	<Value>"First"</Value>
+	<Name>ID</Name>
   </Table>
   <Table>
-	<Value>"Second"</Value>
+	<Name>Name</Name>
   </Table>
    <Table>
-	<Value>"Third"</Value>	
+	<Name>Value</Name>	
   </Table>
 </ArrayOfTable>

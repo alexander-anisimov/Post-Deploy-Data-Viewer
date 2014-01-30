@@ -18,10 +18,10 @@ namespace Post_DeployDataViewer
 			InitializeComponent();
 		}
 
+		// Upload button: serialization file and get Grid on page
 		private void btnUploadFile_Click(object sender, EventArgs e)
 		{
-			// Dowload File to Temp directory
-			string urlDataFile = txtBoxDataFilePath.Text;
+			string urlDataFile = txtBoxDataFilePath.Text; // Dowload File to Temp directory
 
 			WebClient webClient = new WebClient();
 			string path;
@@ -31,7 +31,6 @@ namespace Post_DeployDataViewer
 			Stream dfStream = PathToLocalFile.OpenFile();
 			StreamReader dfStreamReader = new StreamReader(dfStream);
 
-			//List<Serialization.Table> tt1 = Serialization.DeserializeFromXML(Path.GetFileName("fileformat.xml"));
 			string[] tt2 = Serialization.DeserializeFromXMLArray(Path.GetFileName("fileformat.xml"));
 			
 			DataSet ds = new DataSet();
@@ -41,11 +40,6 @@ namespace Post_DeployDataViewer
 			{
 				ds.Tables[0].Columns.Add(tag);
 			}
-
-
-			//ds.Tables[0].Columns.Add("ID");
-			//ds.Tables[0].Columns.Add("Name");
-			//ds.Tables[0].Columns.Add("Value");
 
 			string[] dfStringRowArray = dfStreamReader.ReadToEnd().Split('\n');
 			int rowCount = dfStringRowArray.Count();
@@ -60,10 +54,10 @@ namespace Post_DeployDataViewer
 			dataGridView1.Update();
 		}
 
+		// Open button: choose a file and get file Path
 		private void OpenFile_Click(object sender, EventArgs e)
 		{
-			// Get Path to File
-			DialogResult result = PathToLocalFile.ShowDialog();
+			DialogResult result = PathToLocalFile.ShowDialog(); // Get Path to File
 			if (result == DialogResult.OK)
 			{
 				txtBoxDataFilePath.Text = PathToLocalFile.FileName;
