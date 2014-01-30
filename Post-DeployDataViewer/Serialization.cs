@@ -11,14 +11,6 @@ namespace Post_DeployDataViewer
 	{
 		public class Table
 		{
-			[XmlAttribute("ID")]
-			public string ID
-			{ get; set; }
-
-			[XmlElement("Name")]
-			public string Name
-			{ get; set; }
-
 			[XmlElement("Value")]
 			public string Value
 			{ get; set; }
@@ -62,9 +54,9 @@ namespace Post_DeployDataViewer
 			string[] tags = movies.Select(x => x.Value).ToArray();
 			textReader.Close();
 
-			string[] tags2 = new string[3]; // TODO: add dynamic string[]
-			for (int i = 0; i < tags2.Length; i++) 
-				tags2[i]= movies[i].ToString();
+            //string[] tags2 = new string[3]; // TODO: add dynamic string[]
+            //for (int i = 0; i < tags2.Length; i++) 
+            //    tags2[i]= movies[i].ToString();
 
 			return tags;
 		}
