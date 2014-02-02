@@ -52,6 +52,9 @@ namespace Post_DeployDataViewer
 
 			dataGridView1.DataSource = ds.Tables[0];
 			dataGridView1.Update();
+
+			dfStream.Close();
+			dfStreamReader.Close();
 		}
 
 		// Open button: choose a file and get file Path
@@ -61,6 +64,28 @@ namespace Post_DeployDataViewer
 			if (result == DialogResult.OK)
 			{
 				txtBoxDataFilePath.Text = PathToLocalFile.FileName;
+			}
+		}
+
+		// Save button: save changes on DataGrid to File
+		private void btnSaveChangesToFile_Click(object sender, EventArgs e)
+		{
+			Stream dfReader;
+			if (SaveFileDialog.ShowDialog() == DialogResult.OK)
+			{
+				dfReader = SaveFileDialog.OpenFile();
+				StreamWriter dfWriter = new StreamWriter(dfReader);
+				for (int i = 0; i < dataGridView1.RowCount; i++)
+				{
+					for (int j = 0; j < dataGridView1.ColumnCount; j++)
+					{
+						dfWriter.Write(dataGridView1.Rows[i].Cells[j].Value.ToString() + "	");
+					}
+					dfWriter.WriteLine();
+				}
+
+				dfWriter.Close(); 
+				dfReader.Close();
 			}
 		}
 

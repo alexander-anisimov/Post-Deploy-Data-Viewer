@@ -34,11 +34,14 @@
 			this.btnUploadFile = new System.Windows.Forms.Button();
 			this.OpenFile = new System.Windows.Forms.Button();
 			this.lblChooseDataFile = new System.Windows.Forms.Label();
+			this.btnSaveChangesToFile = new System.Windows.Forms.Button();
+			this.SaveFileDialog = new System.Windows.Forms.SaveFileDialog();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// dataGridView1
 			// 
+			this.dataGridView1.AllowUserToAddRows = false;
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridView1.Location = new System.Drawing.Point(12, 100);
 			this.dataGridView1.Name = "dataGridView1";
@@ -86,11 +89,22 @@
 			this.lblChooseDataFile.TabIndex = 7;
 			this.lblChooseDataFile.Text = "Choose a data file to upload";
 			// 
+			// btnSaveChangesToFile
+			// 
+			this.btnSaveChangesToFile.Location = new System.Drawing.Point(277, 18);
+			this.btnSaveChangesToFile.Name = "btnSaveChangesToFile";
+			this.btnSaveChangesToFile.Size = new System.Drawing.Size(75, 23);
+			this.btnSaveChangesToFile.TabIndex = 8;
+			this.btnSaveChangesToFile.Text = "Save";
+			this.btnSaveChangesToFile.UseVisualStyleBackColor = true;
+			this.btnSaveChangesToFile.Click += new System.EventHandler(this.btnSaveChangesToFile_Click);
+			// 
 			// frmDataView
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(364, 262);
+			this.Controls.Add(this.btnSaveChangesToFile);
 			this.Controls.Add(this.lblChooseDataFile);
 			this.Controls.Add(this.btnUploadFile);
 			this.Controls.Add(this.OpenFile);
@@ -112,5 +126,7 @@
 		private System.Windows.Forms.Button btnUploadFile;
 		private System.Windows.Forms.Button OpenFile;
 		private System.Windows.Forms.Label lblChooseDataFile;
+		private System.Windows.Forms.Button btnSaveChangesToFile;
+		private System.Windows.Forms.SaveFileDialog SaveFileDialog;
 	}
 }
