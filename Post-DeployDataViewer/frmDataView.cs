@@ -79,9 +79,28 @@ namespace Post_DeployDataViewer
 				{
 					for (int j = 0; j < dataGridView1.ColumnCount; j++)
 					{
-						dfWriter.Write(dataGridView1.Rows[i].Cells[j].Value.ToString() + "	");
+						if (j != dataGridView1.ColumnCount - 1)
+						{
+							dfWriter.Write(dataGridView1.Rows[i].Cells[j].Value.ToString() + "	");
+						}
+						else
+						{
+							string myvalue = dataGridView1.Rows[i].Cells[j].Value.ToString().Substring(dataGridView1.Rows[i].Cells[j].Value.ToString().Length - 1);
+							if (dataGridView1.Rows[i].Cells[j].Value.ToString().Substring(dataGridView1.Rows[i].Cells[j].Value.ToString().Length - 1) == "\r")
+							{
+								dfWriter.Write(dataGridView1.Rows[i].Cells[j].Value.ToString().Substring(0, dataGridView1.Rows[i].Cells[j].Value.ToString().Length - 1));
+							}
+							else
+							{
+								dfWriter.Write(dataGridView1.Rows[i].Cells[j].Value.ToString());
+							}
+						}
 					}
 					dfWriter.WriteLine();
+					//if (i != dataGridView1.RowCount)
+					//{
+					//	dfWriter.WriteLine();
+					//}
 				}
 
 				dfWriter.Close(); 
