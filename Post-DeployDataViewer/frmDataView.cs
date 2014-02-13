@@ -97,10 +97,6 @@ namespace Post_DeployDataViewer
 						}
 					}
 					dfWriter.WriteLine();
-					//if (i != dataGridView1.RowCount)
-					//{
-					//	dfWriter.WriteLine();
-					//}
 				}
 
 				dfWriter.Close(); 
